@@ -2,6 +2,7 @@
 @import "@carbon/themes/scss/themes";
 @import "barrington-theme";
 $carbon--theme: map-merge($carbon--theme--white, $barrington--theme);
+$interactive-05: #edb5bf;
 @include carbon--theme();
 
 // Global styles

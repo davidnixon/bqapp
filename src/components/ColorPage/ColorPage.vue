@@ -1,14 +1,19 @@
 <template>
-  <div class="color-page" v-bind:style="styleObject"></div>
+  <div class="color-page" v-bind:style="styleObject">
+    <BannerImage :image="image" :alt="alt" v-if="image" />
+  </div>
 </template>
 
 <script>
+import BannerImage from "@/components/BannerImage";
+
 export default {
   name: "ColorPage",
-  props: { color: String },
+  props: { color: String, image: String, alt: String },
+  components: { BannerImage },
   data: () => ({
     width: 600,
-    height: 400
+    height: 400,
   }),
   created() {
     this.width = window.innerWidth;
@@ -17,9 +22,9 @@ export default {
   computed: {
     styleObject() {
       return { height: this.height - 48 + "px", backgroundColor: this.color };
-    }
+    },
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
