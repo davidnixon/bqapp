@@ -1,0 +1,24 @@
+$feature-flags: (
+  grid-columns-16: true
+);
+
+// Feature flags
+$css--font-face: true;
+$css--plex: true;
+
+@import "./theme";
+@import "carbon-components/scss/globals/grid/grid";
+@import "carbon-components/scss/components/skeleton/skeleton";
+@import "carbon-components/scss/components/ui-shell/ui-shell";
+@import "carbon-components/scss/components/button/button";
+@import "carbon-components/scss/components/tile/tile";
+
+// A few more overrides
+body {
+  background-color: $ui-background;
+}
+
+.bx--content {
+  padding-top: 0;
+  padding-bottom: 0;
+}
