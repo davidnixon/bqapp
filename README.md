@@ -1,4 +1,5 @@
-# bqapp
+# Barrington Quartet
+This is the VueJS code for the Barring Quartet web site which yu can find here: [https://www.barringtonquartet.com](https://www.barringtonquartet.com/)
 
 ## Project setup
 
@@ -34,4 +35,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - ibmcloud account domain-cert-add example.com -c fullchain.pem -k privkey.pem
 - ibmcloud cf create-route dev example.com --hostname www
 - ibmcloud cf map-route APP example.com --hostname www
-- [add CNAME recod to your DNS](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-custom-domains)
+- [add CNAME record to your DNS](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-custom-domains)
