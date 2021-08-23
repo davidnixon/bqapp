@@ -25,12 +25,24 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
+### Tech
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![ibm cloud](https://img.shields.io/badge/IBM-cloud-blue)
+![vue](https://img.shields.io/badge/vue-2.6.1-green)
+![carbon](https://img.shields.io/badge/%40carbon%2Fvue-2.39.0-blue)
+![nginx 1.21.1](https://img.shields.io/badge/nginx-1.21.1-brightgreen.svg)
+![certbot](https://img.shields.io/badge/certbot-automated-brightgreen)
+![Lets Encrype](https://img.shields.io/badge/Let's%20Encrypt-protected-green)
 
 ## Deploy to IBM cloud with custom domain
 
+```sh
+yarn build
+cd cf
+ibmcloud cf push
+```
+
+Other steps:
 - ibmcloud cf create-domain ORG example.com
 - ibmcloud account domain-cert-add example.com -c fullchain.pem -k privkey.pem
 - ibmcloud cf create-route dev example.com --hostname www
