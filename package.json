@@ -8,10 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@carbon/colors": "^10.29.0",
-    "@carbon/themes": "^10.39.0",
-    "@carbon/vue": "^2.39.0",
-    "core-js": "^3.6.5",
+    "@carbon/colors": "^10.30.0",
+    "@carbon/themes": "^10.42.0",
+    "@carbon/vue": "^2.40.0",
+    "core-js": "^3.17.3",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2"
   },
@@ -20,8 +20,8 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.31.0",
-    "eslint-plugin-vue": "^7.14.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.17.0",
     "node-sass": "^6.0.1",
     "sass-loader": "10",
     "vue-template-compiler": "^2.6.11"
