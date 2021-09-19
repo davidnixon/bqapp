@@ -37,6 +37,8 @@ jobs:
         ibmcloud --version
         ibmcloud config --check-version=false
         ibmcloud cf install
+        echo env ${VUE_APP_NAMES}
+        echo secret ${{ secrets.VUE_APP_NAMES }}
 
     # Authenticate with IBM Cloud CLI
     - name: Authenticate with IBM Cloud CLI
