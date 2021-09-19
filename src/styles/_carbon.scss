@@ -1,5 +1,5 @@
 $feature-flags: (
-  grid-columns-16: true
+  grid-columns-16: true,
 );
 
 // Feature flags
@@ -21,4 +21,5 @@ body {
 .bx--content {
   padding-top: 0;
   padding-bottom: 0;
+  background-color: $ui-background;
 }

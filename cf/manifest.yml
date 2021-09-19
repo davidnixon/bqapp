@@ -4,3 +4,4 @@ applications:
     memory: 256M
     buildpacks:
       - https://github.com/cloudfoundry/nginx-buildpack
+    route: random
