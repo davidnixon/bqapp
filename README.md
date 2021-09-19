@@ -1,6 +1,10 @@
 # Barrington Quartet
 This is the VueJS code for the Barring Quartet web site which yu can find here: [https://www.barringtonquartet.com](https://www.barringtonquartet.com/)
 
+## Suggestions or issues
+[Add issue here](https://github.com/davidnixon/bqapp/issues)
+
+
 ## Project setup
 
 ```
