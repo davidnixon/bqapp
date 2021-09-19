@@ -1,0 +1,56 @@
+# This workflow will build an app with yarn and publish it to IBM Cloud Foundry
+#
+# To configure this workflow:
+#
+# 1. Ensure that your repository contains a cf dircetory with a manifest.yml file
+# 2. Setup secrets in your repository by going to settings: Create IBM_CLOUD_API_KEY, IBM_RESOURCE_GROUP, IBM_CF_ORG, IBM_CF_SPACE
+# 3. Change the values for the IBM_CLOUD_REGION
+
+name: Build and Deploy to IBM Cloud Foundry
+
+on:
+  release:
+    types: [created]
+
+# Environment variables available to all jobs and steps in this workflow
+env:
+  IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
+  IBM_RESOURCE_GROUP: ${{ secrets.IBM_RESOURCE_GROUP }}
+  IBM_CF_ORG: ${{ secrets.IBM_CF_ORG }}
+  IBM_CF_SPACE: ${{ secrets.IBM_CF_SPACE }}
+  IBM_CLOUD_REGION: us-east
+
+jobs:
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    # Download and Install IBM Cloud CLI
+    - name: Install IBM Cloud CLI
+      run: |
+        curl -fsSL https://clis.cloud.ibm.com/install/linux | sh
+        ibmcloud --version
+        ibmcloud config --check-version=false
+        ibmcloud cf install
+
+    # Authenticate with IBM Cloud CLI
+    - name: Authenticate with IBM Cloud CLI
+      run: |
+        ibmcloud login --apikey "${IBM_CLOUD_API_KEY}" -r "${IBM_CLOUD_REGION}" -g "${IBM_RESOURCE_GROUP}" -o "${IBM_CF_ORG}" -s "${IBM_CF_SPACE}"
+
+    # Build the production files
+    - name: Build with yarn
+      run: |
+        yarn
+        yarn build
+
+    # Deploy the build to cloud foundry
+    - name: Push to cloud foundry
+      run: |
+        cd cf
+        ibmcloud cf push
