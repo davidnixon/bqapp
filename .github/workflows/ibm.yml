@@ -37,8 +37,6 @@ jobs:
         ibmcloud --version
         ibmcloud config --check-version=false
         ibmcloud cf install
-        echo env ${VUE_APP_NAMES}
-        echo secret ${{ secrets.VUE_APP_NAMES }}
 
     # Authenticate with IBM Cloud CLI
     - name: Authenticate with IBM Cloud CLI
@@ -47,6 +45,9 @@ jobs:
 
     # Build the production files
     - name: Build with yarn
+      env:
+        # Add extra build env values here
+        VUE_APP_NAMES: ${{ secrets.VUE_APP_NAMES }}
       run: |
         yarn
         yarn build
