@@ -10,3 +10,8 @@ $interactive-05: #edb5bf;
 @import "carbon-components/scss/globals/scss/vendor/@carbon/layout/scss/breakpoint.scss";
 @import "carbon-components/scss/globals/scss/typography.scss";
 @import "carbon-components/scss/globals/scss/vars.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
+body {
+  font-family: "Playfair Display", serif;
+}

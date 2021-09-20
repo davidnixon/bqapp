@@ -4,6 +4,11 @@
       >Skip to content</cv-skip-to-content
     >
     <cv-header-name to="/" prefix="Barrington Quartet">Welcome</cv-header-name>
+    <cv-header-nav aria-label="navigation">
+      <cv-header-menu-item :to="{ name: 'about-page' }">
+        Our Story
+      </cv-header-menu-item>
+    </cv-header-nav>
   </cv-header>
 </template>
 
@@ -12,7 +17,7 @@ export default {
   name: "AppHeader",
   data: () => ({}),
   created() {},
-  methods: {}
+  methods: {},
 };
 </script>
 

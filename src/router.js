@@ -9,7 +9,13 @@ export default new Router({
       path: "/",
       name: "welcome-page",
       component: () =>
-        import(/* webpackChunkName: "welcome-page" */ "./views/LandingPage")
-    }
-  ]
+        import(/* webpackChunkName: "welcome-page" */ "./views/LandingPage"),
+    },
+    {
+      path: "/about",
+      name: "about-page",
+      component: () =>
+        import(/* webpackChunkName: "about-page" */ "./views/AboutPage"),
+    },
+  ],
 });

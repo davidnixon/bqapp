@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@carbon/colors": "^10.30.0",
+    "@carbon/icons-vue": "^10.37.0",
     "@carbon/themes": "^10.42.0",
     "@carbon/vue": "^2.40.0",
     "core-js": "^3.17.3",
